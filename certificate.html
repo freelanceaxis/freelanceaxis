@@ -91,31 +91,46 @@
         async function verifyCertificate() {
             const certificateID = document.getElementById("certificateID").value.trim();
             const output = document.getElementById("output");
-
+    
             if (!certificateID) {
                 output.textContent = "⚠️ Please enter a Certificate ID.";
                 return;
             }
-
+    
+            output.textContent = "⏳ Verifying..."; // Show loading message
+    
             try {
-                let response = await fetch(`https://script.google.com/macros/s/AKfycbzvmDjhKgMw3NymMhxL9yIwwEvouQAqb6HNd-diMulcbUv_OvvlMBYYzFyBrJ6a3PQh/exec?certificateID=${certificateID}`);
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-
-                let data = await response.json();
-
-                if (data.error) {
+                const response = await Promise.race([
+                    fetch(`https://script.google.com/macros/s/AKfycbzvmDjhKgMw3NymMhxL9yIwwEvouQAqb6HNd-diMulcbUv_OvvlMBYYzFyBrJ6a3PQh/exec?certificateID=${certificateID}`, {
+                        method: "GET",
+                        cache: "no-store",
+                        mode: "cors",
+                    }),
+                    new Promise((_, reject) => setTimeout(() => reject(new Error("Server timeout!")), 5000)) // 5-sec timeout
+                ]);
+    
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    
+                const data = await response.json();
+    
+                // If API returns an invalid response
+                if (!data.name || !data.course || !data.issueDate) {
                     output.textContent = "❌ Certificate Not Found.";
                 } else {
                     output.textContent = `✅ Certificate Found:\nName: ${data.name}\nCourse: ${data.course}\nIssued on: ${data.issueDate}`;
                 }
             } catch (error) {
-                output.textContent = `⚠️ Error fetching data: ${error.message}`;
+                output.textContent = `⚠️ ${error.message}`;
             }
         }
+    
+        document.getElementById("certificateID").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                verifyCertificate();
+            }
+        });
     </script>
+    
     
 </body>
 </html>
