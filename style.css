@@ -409,7 +409,76 @@ footer p {
         margin-top: 10px;
         display: block;
     }
+    @media (max-width: 768px) {
+        section {
+            padding: 40px 10px;
+        }
+        .fees-container {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .btn {
+        margin: 10px;
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    p {
+        line-height: 1.8; /* More readable text */
+    }
+    h2 {
+        margin-bottom: 20px;
+    }
+    .fees-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px; /* Space between cards */
+    }
+    .card {
+        padding: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    section {
+        padding: 60px 20px; /* More space around sections */
+        margin-bottom: 40px; /* Space between sections */
+    }
+section {
+    padding: 60px 20px; /* More space around sections */
+    margin-bottom: 40px; /* Space between sections */
+}
+small.text-muted {
+    color: #f39c12 !important; /* Highlight with a bright color */
+    font-weight: bold; /* Make it bold */
+    .contact-link {
+        color: black;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .contact-link:hover {
+        color: blue;
+    }
+}
+                    
 
 
+ul.list-unstyled li {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds spacing between the checkmark and text */
+}
 
+.checkmark {
+    font-size: 1.2rem;
+}
+
+ul.list-unstyled li {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds spacing between the checkmark and text */
+}
+
+.checkmark {
+    font-size: 1.2rem;
+}
 
