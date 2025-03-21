@@ -481,18 +481,304 @@ ul.list-unstyled li {
 .checkmark {
     font-size: 1.2rem;
 }
-img, a, p, span, div {
-    -webkit-user-drag: none; 
-    -khtml-user-drag: none; 
-    -moz-user-drag: none; 
-    -o-user-drag: none; 
-    user-drag: none; 
-}
-* {
-    user-select: none; 
-    -webkit-user-select: none; 
-    -moz-user-select: none; 
-    -ms-user-select: none; 
+
+ul.list-unstyled li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+.checkmark {
+    font-size: 1.2rem;
+}
 
+/* General Reset */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e6f0ff, #cce0ff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    padding: 60px 20px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.container {
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+h3, h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e90ff;
+}
+
+p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.btn {
+    margin: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+/* Navbar with Gradient */
+.navbar-light {
+    background: linear-gradient(90deg, #003366, #1e90ff) !important;
+    padding: 15px 20px;
+}
+
+.navbar-light .navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 24px;
+    font-weight: 600;
+    color: white !important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.navbar-brand img {
+    max-height: 70px;
+    margin-bottom: 5px;
+}
+
+.navbar-brand small {
+    font-size: 12px;
+    color: #ddd;
+    display: block;
+    margin-top: 2px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+    font-size: 18px;
+    margin-right: 20px;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #b2d8ff !important;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    color: white;
+}
+
+.navbar-collapse {
+    background: linear-gradient(90deg, #003366, #1e90ff);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(30, 144, 255, 0.8)), url('hero-image.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    position: relative;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Gradient Buttons */
+.btn-primary {
+    background: linear-gradient(90deg, #1e90ff, #003366) !important;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #003366, #001f4d) !important;
+}
+
+.btn-light {
+    background: linear-gradient(90deg, #cce0ff, #b2d8ff);
+    color: #003366 !important;
+    border: 1px solid #003366;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.btn-light:hover {
+    background: linear-gradient(90deg, #003366, #001f4d) !important;
+    color: white !important;
+}
+
+/* Skills Section */
+#skills .row {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+#skills .col-md-4 {
+    background: linear-gradient(135deg, #cce0ff, #b2d8ff);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+#skills .col-md-4:hover {
+    transform: scale(1.05);
+}
+
+/* Earn Section */
+#earn {
+    background: linear-gradient(135deg, #003366, #1e90ff);
+    color: white;
+    padding: 50px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#earn p {
+    font-size: 1.2rem;
+}
+
+/* Why Choose Us */
+#why-us ul {
+    list-style: none;
+    padding: 0;
+}
+
+#why-us li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    padding: 10px;
+    background: linear-gradient(90deg, #b2d8ff, #99ccff);
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+#why-us li:hover {
+    background: linear-gradient(90deg, #1e90ff, #003366);
+    color: white;
+}
+
+/* Join Section */
+#join {
+    background: linear-gradient(90deg, #cce0ff, #b2d8ff);
+    text-align: center;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212 !important;
+    color: #fff !important;
+}
+
+.dark-mode .navbar {
+    background: linear-gradient(90deg, #001f4d, #1e90ff) !important;
+}
+
+.dark-mode .btn-primary {
+    background: linear-gradient(90deg, #1e90ff, #003366) !important;
+}
+
+.dark-mode .btn-light {
+    background: linear-gradient(90deg, #b2d8ff, #99ccff) !important;
+    color: #001f4d !important;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #003366, #1e90ff);
+    text-align: center;
+    padding: 15px 0;
+}
+
+footer p {
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer-link {
+    color: black;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.msme-logo {
+    max-width: 150px;
+    margin-top: 10px;
+    display: block;
+}
+.highlight-blue {
+    color: #2196f3;
+    font-weight: bold;
+}
+.card {
+    background: linear-gradient(135deg, #bbdefb, #64b5f6);
+    color: #0d47a1;
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .card h4 {
+    color: #0d47a1;
+    font-weight: 600;
+  }
+
+  .card p {
+    color: #0d47a1;
+    font-weight: 500;
+  }
