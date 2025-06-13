@@ -782,3 +782,31 @@ footer p {
     color: #0d47a1;
     font-weight: 500;
   }
+  html {
+    scroll-behavior: smooth;
+}
+.highlight-white {
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+.highlight-white {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+
+.card {
+    background-color: #e6ccff; /* Light purple background */
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .card-title {
+    color: #6a0dad;
+    font-weight: bold;
+  }
+  .card-text {
+    color: #333;
+  }
+  
